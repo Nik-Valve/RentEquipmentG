@@ -63,7 +63,8 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid
+        Background="#264653">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -74,12 +75,14 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
                    FontSize="24"
+                   Foreground="Yellow"
             ></TextBlock>
         <ListView x:Name="lvStaff"
                   Grid.Row="2"
                   KeyDown="lvStaff_KeyDown"
                   MouseDoubleClick="lvStaff_MouseDoubleClick"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Background="#264653"
                   >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -109,19 +112,17 @@
                             </Grid.RowDefinitions>
 
 
-
-
                             <Image x:Name="PhotoEmployee"
-                                    Margin="10"
-                                   Grid.RowSpan="3"
-                                   >
-
-
+                       Grid.RowSpan="3"  
+                       Margin="10">
                                 <Image.Source>
-                                    <Binding Path="Image"></Binding>
+                                    <Binding Path="Photo">
+                                    </Binding>
                                 </Image.Source>
                             </Image>
-
+                            <Image 
+                                Grid.RowSpan="3"
+                                Source="/Windows/idiot.jpeg"></Image>
 
 
 
@@ -169,22 +170,26 @@
         <Button
             x:Name="btnStaffAdd"
                 Grid.Row="1"
-                Height="50"
+                Height="35"
                 Width="150"
                 Content="Добавить сотрудника"
                 Click="btnStaffAdd_Click"
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0"
                 FontSize="14"
-                Background="Green"
-                Foreground="Blue" Style="{DynamicResource ButtonStyle1}"
+           Background="#161a1e" 
+            Style="{DynamicResource ButtonStyle1}"
+            BorderBrush="#1e1112" 
+            BorderThickness="2"
+            Foreground="Yellow"
             ></Button>
         <WrapPanel 
             Grid.Row="1" VerticalAlignment="Center">
             <TextBlock
                 Text="Поиск"
                 FontSize="24"
-                Margin="10 0"                
+                Margin="10 0"  
+                Foreground="Yellow"
                 ></TextBlock>
             <TextBox x:Name="txtSearch"
                 Width="300"

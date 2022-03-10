@@ -231,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="RES\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EF\Model1.Context.tt">
@@ -244,6 +243,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Windows\idiot.jpeg" />
+    <Resource Include="RES\idiot.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
