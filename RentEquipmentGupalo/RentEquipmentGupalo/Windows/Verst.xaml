@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
         mc:Ignorable="d"
-        Title="Verst" Height="450" Width="800">
+          Title="Verst" Height="450" Width="1000">
     <Grid>
-        
+        <Border Background="Aqua"
+                Width="900"
+                Height="100"
+                BorderThickness="2"
+                BorderBrush="#FFB0A6DC"
+                CornerRadius="4">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="PhotoEmployee"
+                   Margin="10"
+                   Grid.RowSpan="3"
+                   />
+                <TextBlock Text="Фамилия"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin=" 5"
+                       Grid.Column="1"
+                       Grid.Row="1"/>
+                <TextBlock Text="Имя"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin=" 5"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
+                <TextBlock Text="Отчество"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin=" 5"
+                       Grid.Column="1"
+                       Grid.Row="3"/>
+            </Grid>
+
+        </Border>
     </Grid>
 </Window>

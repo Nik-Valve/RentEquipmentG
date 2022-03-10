@@ -135,8 +135,8 @@
     <Compile Include="Windows\EquipExtWindow.xaml.cs">
       <DependentUpon>EquipExtWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\EquipLisWindow.xaml.cs">
-      <DependentUpon>EquipLisWindow.xaml</DependentUpon>
+    <Compile Include="Windows\EquipListWindow.xaml.cs">
+      <DependentUpon>EquipListWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -182,7 +182,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\EquipLisWindow.xaml">
+    <Page Include="Windows\EquipListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

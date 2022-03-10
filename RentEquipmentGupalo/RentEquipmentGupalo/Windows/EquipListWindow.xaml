@@ -1,0 +1,39 @@
+﻿<Window x:Class="RentEquipmentGupalo.Windows.EquipListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
+        mc:Ignorable="d"
+        Title="Список оборудования" Height="600" Width="1000" >
+    <Grid
+        Background="#264653">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Список оборудования"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="24"
+                   Foreground="Yellow"
+            ></TextBlock>
+        <ListView x:Name="lvEquipList"
+                  Grid.Row="2"
+                  Background="#264653"
+                  KeyDown="lvEquipList_KeyDown">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
+                    <GridViewColumn Header="Название" Width="200" DisplayMemberBinding="{Binding NameProduct}"></GridViewColumn>
+                    <GridViewColumn Header="Тип" Width="300" DisplayMemberBinding="{Binding Type.NameType}"></GridViewColumn>
+                    <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding Price}"></GridViewColumn>
+                    <GridViewColumn Header="Гарантия" Width="200" DisplayMemberBinding="{Binding Warranty}"></GridViewColumn>
+                    <GridViewColumn Header="Состояние" Width="100" DisplayMemberBinding="{Binding Status.StatusName}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

@@ -8,6 +8,6 @@ namespace RentEquipmentGupalo.ClassHelper
 {
     internal class AppData
     {
-        public static EF.RentEquipmentEntities Context;
+        public static EF.RentEquipmentEntities Context { get; } = new EF.RentEquipmentEntities();
     }
 }
