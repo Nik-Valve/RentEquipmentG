@@ -1,0 +1,52 @@
+﻿<Window x:Class="RentEquipmentGupalo.Windows.EquipExtWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
+        mc:Ignorable="d"
+         Title="Выдача оборудования" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid
+        Background="#264653">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Выдача"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                   FontSize="24"
+                   Foreground="Yellow"
+            ></TextBlock>
+        <ListView x:Name="lvEquipExt"
+                  Grid.Row="2"
+                  KeyDown="lvEquipExt_KeyDown"
+                  Background="#264653">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
+                    <GridViewColumn Header="Клиент" Width="50" DisplayMemberBinding="{Binding Client.ID}"></GridViewColumn>
+                    <GridViewColumn Header="Фамилия клиента" Width="150" DisplayMemberBinding="{Binding Client.LastName}"></GridViewColumn>
+                    <GridViewColumn Header="Сотрудник" Width="75" DisplayMemberBinding="{Binding Staff.ID}"></GridViewColumn>
+                    <GridViewColumn Header="Фамилия сотрудника" Width="200" DisplayMemberBinding="{Binding Staff.LastName}"></GridViewColumn>
+                    <GridViewColumn Header="Дата выдачи" Width="150" DisplayMemberBinding="{Binding DateOfIssue}"></GridViewColumn>
+                    <GridViewColumn Header="Номер оборудования" Width="150" DisplayMemberBinding="{Binding Product.ID}"></GridViewColumn>
+                    <GridViewColumn Header="Выдано" Width="125" DisplayMemberBinding="{Binding Product.NameProduct}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnEExtWindow" 
+            Content="Выдать оборудование"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Grid.Row="1"
+            Margin="10 10 10 10" Click="btnEExtWindow_Click" 
+                Background="Black"
+                Foreground="White"
+                
+            ></Button>
+    </Grid>
+</Window>

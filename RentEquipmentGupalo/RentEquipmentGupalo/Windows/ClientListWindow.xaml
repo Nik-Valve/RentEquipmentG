@@ -1,0 +1,44 @@
+﻿<Window x:Class="RentEquipmentGupalo.Windows.ClientListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
+        mc:Ignorable="d"
+        Title="Список клиентов" Height="600" Width="1000">
+    <Grid
+        Background="#264653">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Список клиентов"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                   FontSize="24"
+                   Foreground="Yellow"
+            ></TextBlock>
+        <ListView x:Name="lvClientList"
+                  Grid.Row="2"
+                  KeyDown="lvClientList_KeyDown"
+                  Background="#264653"
+                  >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
+                    <GridViewColumn Header="Фамилия" Width="125" DisplayMemberBinding="{Binding LastName}"></GridViewColumn>
+                    <GridViewColumn Header="Имя" Width="125" DisplayMemberBinding="{Binding FirstName}"></GridViewColumn>
+                    <GridViewColumn Header="Отчество" Width="125" DisplayMemberBinding="{Binding MiddleName}"></GridViewColumn>
+                    <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
+                    <GridViewColumn Header="Почта" Width="100" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
+                    <GridViewColumn Header="Дата рождения" Width="150" DisplayMemberBinding="{Binding DateOfBirth}"></GridViewColumn>
+                    <GridViewColumn Header="Пол" Width="50" DisplayMemberBinding="{Binding Gender.NameGender}"></GridViewColumn>
+                    <GridViewColumn Header="Серия" Width="50" DisplayMemberBinding="{Binding Passport.PassportSeries}"></GridViewColumn>
+                    <GridViewColumn Header="Номер" Width="75" DisplayMemberBinding="{Binding Passport.PassportNumber}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
