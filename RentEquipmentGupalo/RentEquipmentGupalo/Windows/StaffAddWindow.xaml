@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="StaffAddWindow" Height="450" Width="500" WindowStartupLocation="CenterScreen"
         MinHeight="500" MinWidth="450">
-    <Grid>
+    <Grid
+        Background="#264653">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -33,10 +34,12 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="20"
+                   Foreground="Yellow"
                    x:Name="tbTitle"
                    Text="Добавление сотрудников"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Фамилия"
             Grid.Column="0"
             Grid.Row="1"
@@ -46,6 +49,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Имя"
             Grid.Column="0"
             Grid.Row="2"
@@ -55,6 +59,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Отчество"
             Grid.Column="0"
             Grid.Row="3"
@@ -64,6 +69,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Телефон"
             Grid.Column="0"
             Grid.Row="4"
@@ -73,6 +79,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Email"
             Grid.Column="0"
             Grid.Row="5"
@@ -82,6 +89,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Роль"
             Grid.Column="0"
             Grid.Row="6"
@@ -91,6 +99,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Логин"
             Grid.Column="0"
             Grid.Row="7"
@@ -100,6 +109,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Пароль"
             Grid.Column="0"
             Grid.Row="8"
@@ -109,6 +119,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBlock
+            Foreground="Yellow"
             Text="Повторите пароль"
             Grid.Column="0"
             Grid.Row="9"
@@ -118,6 +129,7 @@
             FontSize="16"
             ></TextBlock>
         <TextBox
+            Foreground="Yellow"
             x:Name="txtLastName"
             MaxLength="250"
             Grid.Column="1"
@@ -130,6 +142,7 @@
             VerticalContentAlignment="Center"
             ></TextBox>
         <TextBox
+            Foreground="Yellow"
             MaxLength="250"
             x:Name="txtFirstName"
             Grid.Column="1"
@@ -235,7 +248,9 @@
             <Image x:Name="photousing" Source="/RES/idiot.jpg"/>
 
         </Border>
-        <Button x:Name="btnChooseImage"
+        <Button 
+            Style="{DynamicResource ButtonStyle1}"
+            x:Name="btnChooseImage"
                 Grid.Row="13"
                 Grid.ColumnSpan="2"
                 Width="150"
@@ -243,7 +258,9 @@
                 Content="Добавить"
                 Click="btnChooseImage_Click"
             ></Button>
-        <Button x:Name="btnAdd"
+        <Button 
+            Style="{DynamicResource ButtonStyle1}"
+            x:Name="btnAdd"
                 Grid.Row="14"
                 Grid.ColumnSpan="2"
                 Width="150"

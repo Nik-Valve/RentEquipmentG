@@ -181,6 +181,7 @@
             VerticalAlignment="Center" TextChanged="txtEquipSearch_TextChanged"
             ></TextBox>
         <Button
+            Style="{DynamicResource ButtonStyle1}"
             x:Name="btnCancel"
             Grid.ColumnSpan="2"
             Grid.Row="6"
@@ -195,6 +196,7 @@
             Content="Отмена" Click="btnCancel_Click"
             ></Button>
         <Button
+            Style="{DynamicResource ButtonStyle1}"
             x:Name="btnAddExt"
             Grid.ColumnSpan="2"
             Grid.Row="6"

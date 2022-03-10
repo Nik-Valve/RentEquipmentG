@@ -37,16 +37,15 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnEExtWindow" 
+        <Button Style="{DynamicResource ButtonStyle1}"
+            x:Name="btnEExtWindow" 
             Content="Выдать оборудование"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="20"
             Grid.Row="1"
-            Margin="10 10 10 10" Click="btnEExtWindow_Click" 
-                Background="Black"
-                Foreground="White"
-                
+            Margin="10 10 10 10"
+            Click="btnEExtWindow_Click"
             ></Button>
     </Grid>
 </Window>

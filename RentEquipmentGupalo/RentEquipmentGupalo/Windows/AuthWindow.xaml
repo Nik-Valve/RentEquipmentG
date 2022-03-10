@@ -43,7 +43,7 @@
                 FontSize="14" Foreground="#FF810000"      
                 
                 ></TextBlock>
-        <Button
+            <Button Style="{DynamicResource ButtonStyle1}"
                 x:Name="authButton"
                 Content="Войти"
                 FontSize="24"
