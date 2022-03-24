@@ -72,6 +72,7 @@
           <Property Name="Warranty" Type="date" Nullable="false" />
           <Property Name="IDStatus" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -368,6 +369,7 @@
           <NavigationProperty Name="ClientProduct" Relationship="Self.FK_ClientProduct_Product" FromRole="Product" ToRole="ClientProduct" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Product_Status" FromRole="Product" ToRole="Status" />
           <NavigationProperty Name="Type" Relationship="Self.FK_Product_Type" FromRole="Product" ToRole="Type" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -671,6 +673,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="RentEquipmentModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
                 <ScalarProperty Name="IDType" ColumnName="IDType" />

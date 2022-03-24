@@ -67,6 +67,7 @@
     <Property Name="Warranty" Type="date" Nullable="false" />
     <Property Name="IDStatus" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Role">
     <Key>

@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
         mc:Ignorable="d"
-          Title="Verst" Height="450" Width="1000">
+          Title="Verst" Height="600" Width="1000">
+    <Window.Resources>
+    </Window.Resources>
     <Grid>
         <Border Background="Aqua"
-                Width="900"
-                Height="100"
+                Width="400"
+                Height="500"
                 BorderThickness="2"
                 BorderBrush="#FFB0A6DC"
                 CornerRadius="4">
@@ -25,32 +27,75 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image x:Name="PhotoEmployee"
-                   Margin="10"
-                   Grid.RowSpan="3"
-                   />
-                <TextBlock Text="Фамилия"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="1"/>
-                <TextBlock Text="Имя"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="0"/>
-                <TextBlock Text="Отчество"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="3"/>
+
+                <Image Source="/RES/equipment.jpg"
+                       Grid.ColumnSpan="3"
+                    Grid.RowSpan="2"/>
+
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="NameProduct:  "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="Type: "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="Prce: "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+                
+                
+                
+                
+                <TextBlock
+                    Text="{Binding NameProduct}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    ></TextBlock>
+                <TextBlock
+                    Text="{Binding Type}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    ></TextBlock>
+                <TextBlock
+                    Text="{Binding LastName}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    ></TextBlock>
             </Grid>
 
         </Border>

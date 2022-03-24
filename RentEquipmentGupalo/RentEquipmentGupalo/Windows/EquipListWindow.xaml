@@ -22,18 +22,129 @@
             ></TextBlock>
         <ListView x:Name="lvEquipList"
                   Grid.Row="2"
-                  Background="#264653"
-                  KeyDown="lvEquipList_KeyDown">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
-                    <GridViewColumn Header="Название" Width="200" DisplayMemberBinding="{Binding NameProduct}"></GridViewColumn>
-                    <GridViewColumn Header="Тип" Width="300" DisplayMemberBinding="{Binding Type.NameType}"></GridViewColumn>
-                    <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding Price}"></GridViewColumn>
-                    <GridViewColumn Header="Гарантия" Width="200" DisplayMemberBinding="{Binding Warranty}"></GridViewColumn>
-                    <GridViewColumn Header="Состояние" Width="100" DisplayMemberBinding="{Binding Status.StatusName}"></GridViewColumn>
-                </GridView>
-            </ListView.View>
+                  KeyDown="lvEquipList_KeyDown_1"
+                  MouseDoubleClick="lvEquipList_MouseDoubleClick"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+            Background="Black"
+            Width="400"
+            Height="200"
+            BorderThickness="2"
+            CornerRadius="5"
+            BorderBrush="Wheat"
+            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="/RES/equipment.jpg"
+                       Grid.ColumnSpan="3"
+                    Grid.RowSpan="2"/>
+
+                            <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="NameProduct:  "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+                            <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="Type: "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+                            <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Width="130"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Text="Prce: "
+                    FontSize="15"
+                    Padding="10 5 0 0"/>
+
+
+
+
+                            <TextBlock
+                    Text="{Binding NameProduct}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding Type}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding LastName}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    ></TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock
+                Text="Поиск"
+                FontSize="24"
+                Margin="10 0"
+                Foreground="Yellow"
+                ></TextBlock>
+            <TextBox x:Name="txtSearch"
+                Width="300"
+                     FontSize="16"
+                     Margin="10"
+                     TextChanged="txtSearch_TextChanged"
+                ></TextBox>
+            <ComboBox x:Name="cmbSort"
+                      Width="300"
+                      FontSize="16"
+                      Margin="10"
+                      SelectionChanged="cmbSort_SelectionChanged"
+                ></ComboBox>
+        </WrapPanel>
     </Grid>
 </Window>

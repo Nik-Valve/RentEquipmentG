@@ -84,3 +84,5 @@ C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj
 C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo.csproj.CopyComplete
 C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo.exe
 C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo.pdb
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\AddEquipListWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\AddEquipListWindow.baml

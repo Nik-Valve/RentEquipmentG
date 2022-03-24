@@ -63,6 +63,7 @@
     <NavigationProperty Name="ClientProduct" Relationship="Self.FK_ClientProduct_Product" FromRole="Product" ToRole="ClientProduct" />
     <NavigationProperty Name="Status" Relationship="Self.FK_Product_Status" FromRole="Product" ToRole="Status" />
     <NavigationProperty Name="Type" Relationship="Self.FK_Product_Type" FromRole="Product" ToRole="Type" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Role">
     <Key>

@@ -49,6 +49,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="RentEquipmentModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
           <ScalarProperty Name="IDType" ColumnName="IDType" />

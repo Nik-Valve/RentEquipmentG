@@ -120,6 +120,9 @@
     <Compile Include="EF\Type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddEquipListWindow.xaml.cs">
+      <DependentUpon>AddEquipListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\AddEquipListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,7 +250,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Windows\idiot.jpeg" />
+    <Resource Include="RES\equipment.jpg" />
     <Resource Include="RES\idiot.jpeg" />
   </ItemGroup>
   <ItemGroup>

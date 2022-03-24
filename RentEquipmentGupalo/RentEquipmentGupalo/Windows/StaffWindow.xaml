@@ -110,9 +110,11 @@
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image 
-                                Grid.RowSpan="3"
-                                Source="/Windows/idiot.jpeg"></Image>
+                            
+                                <Image Source="/RES/idiot.jpeg"
+                                       Grid.RowSpan="3">
+
+                            </Image>
                             <Image x:Name="PhotoStaff"
                        Grid.RowSpan="3"  
                        Margin="10">
@@ -129,7 +131,7 @@
                     Foreground="AntiqueWhite"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
-                    Margin="10"
+                    Margin="5"
                     Grid.Column="1"
                     Grid.Row="0"
                     ></TextBlock>
@@ -139,7 +141,7 @@
                                 Foreground="AntiqueWhite"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
-                    Margin="10"
+                    Margin="5"
                     Grid.Column="1"
                     Grid.Row="1"
                     ></TextBlock>
@@ -149,7 +151,7 @@
                                 Foreground="AntiqueWhite"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
-                    Margin="10"
+                    Margin="5"
                     Grid.Column="1"
                     Grid.Row="2"
                     ></TextBlock>
