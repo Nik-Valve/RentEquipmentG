@@ -1,19 +1,19 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
 
 namespace RentEquipmentGupalo.Windows
 {
@@ -24,7 +24,7 @@ namespace RentEquipmentGupalo.Windows
     {
         private bool IsEdit = false;
         EF.Staff editStaff = new EF.Staff();
-        string pathPhoto;
+        string photostrl;
         public StaffAddWindow()
         {
             InitializeComponent();
@@ -50,6 +50,19 @@ namespace RentEquipmentGupalo.Windows
             txtPassword.Text = staff.Password;
             cmbRole.SelectedIndex = staff.IDRole - 1;
             editStaff = staff;
+            if (staff.Image != null)
+            {
+                using (MemoryStream stream = new MemoryStream(staff.Image))
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    bitmapImage.StreamSource = stream;
+                    bitmapImage.EndInit();
+                    PhotoUser.Source = bitmapImage;
+                }
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -132,13 +145,10 @@ namespace RentEquipmentGupalo.Windows
                     editStaff.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
                     editStaff.Login = txtLogin.Text;
                     editStaff.Password = txtPassword.Text;
-
-                    if (photousing != null)
+                    if (photostrl != null)
                     {
-
-                        editStaff.Image = File.ReadAllBytes(pathPhoto);
+                        editStaff.Image = File.ReadAllBytes(photostrl);
                     }
-
                     ClassHelper.AppData.Context.SaveChanges();
                     MessageBox.Show("Пользователь изменен");
                     this.Close();
@@ -166,6 +176,10 @@ namespace RentEquipmentGupalo.Windows
                     newstaff.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
                     newstaff.Login = txtLogin.Text;
                     newstaff.Password = txtPassword.Text;
+                    if (photostrl != null)
+                    {
+                        newstaff.Image = File.ReadAllBytes(photostrl);
+                    }
                     ClassHelper.AppData.Context.Staff.Add(newstaff);
                     ClassHelper.AppData.Context.SaveChanges();
                     MessageBox.Show("Пользователь добавлен");
@@ -181,14 +195,13 @@ namespace RentEquipmentGupalo.Windows
 
         }
 
-        private void btnChooseImage_Click(object sender, RoutedEventArgs e)
+        private void btnPhoto_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-
             if (openFile.ShowDialog() == true)
             {
-                photousing.Source = new BitmapImage(new Uri(openFile.FileName));
-                pathPhoto = openFile.FileName;
+                PhotoUser.Source = new BitmapImage(new Uri(openFile.FileName));
+                photostrl = openFile.FileName;
             }
         }
     }

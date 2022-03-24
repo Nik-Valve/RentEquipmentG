@@ -1,0 +1,16 @@
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipment.csproj.AssemblyReference.cache
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipment.csproj.SuggestedBindingRedirects.cache
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\AuthWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\ClientListWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\EquipAcceptWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\EquipExtAddWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\EquipExtWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\EquipListWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\StaffAddWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\StaffWindow.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\Windows\Verst.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\App.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo_Content.g.cs
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo_MarkupCompile.cache
+C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\obj\Debug\RentEquipmentGupalo_MarkupCompile.lref

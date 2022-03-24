@@ -7,6 +7,63 @@
         mc:Ignorable="d"
         Title="StaffAddWindow" Height="450" Width="500" WindowStartupLocation="CenterScreen"
         MinHeight="500" MinWidth="450">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="#161a1e" CornerRadius="10" BorderBrush="#1e1112" BorderThickness="5" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid
         Background="#264653">
         <Grid.ColumnDefinitions>
@@ -24,22 +81,18 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.ColumnSpan="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="20"
-                   Foreground="Yellow"
                    x:Name="tbTitle"
                    Text="Добавление сотрудников"
+                   Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Фамилия"
             Grid.Column="0"
             Grid.Row="1"
@@ -47,9 +100,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Имя"
             Grid.Column="0"
             Grid.Row="2"
@@ -57,9 +110,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Отчество"
             Grid.Column="0"
             Grid.Row="3"
@@ -67,9 +120,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Телефон"
             Grid.Column="0"
             Grid.Row="4"
@@ -77,9 +130,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Email"
             Grid.Column="0"
             Grid.Row="5"
@@ -87,9 +140,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Роль"
             Grid.Column="0"
             Grid.Row="6"
@@ -97,9 +150,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Логин"
             Grid.Column="0"
             Grid.Row="7"
@@ -107,9 +160,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Пароль"
             Grid.Column="0"
             Grid.Row="8"
@@ -117,9 +170,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBlock
-            Foreground="Yellow"
             Text="Повторите пароль"
             Grid.Column="0"
             Grid.Row="9"
@@ -127,9 +180,9 @@
             VerticalAlignment="Center"
             Margin="10 0"
             FontSize="16"
+            Foreground="Yellow"
             ></TextBlock>
         <TextBox
-            Foreground="Yellow"
             x:Name="txtLastName"
             MaxLength="250"
             Grid.Column="1"
@@ -142,7 +195,6 @@
             VerticalContentAlignment="Center"
             ></TextBox>
         <TextBox
-            Foreground="Yellow"
             MaxLength="250"
             x:Name="txtFirstName"
             Grid.Column="1"
@@ -237,31 +289,32 @@
             Width="220"
             VerticalContentAlignment="Center"
             ></TextBox>
-
-
-        <Border Background="LightGray" Grid.Row="10" Grid.ColumnSpan="2"
-                Grid.RowSpan="3"
-                Width=" 150"
-                Margin=" 5"
-                CornerRadius=" 10"
-                >
-            <Image x:Name="photousing" Source="/RES/idiot.jpg"/>
+        <Border
+            Grid.Column="1"
+            Grid.Row="10"
+            Height="75"
+            Width="250"
+            Margin="5"
+            CornerRadius="10"
+            Background="Gray"    
+            >
+            <Image x:Name="PhotoUser" Source="/Windows/idiot.jpeg" />
 
         </Border>
-        <Button 
-            Style="{DynamicResource ButtonStyle1}"
-            x:Name="btnChooseImage"
-                Grid.Row="13"
-                Grid.ColumnSpan="2"
-                Width="150"
-                Height="30"
-                Content="Добавить"
-                Click="btnChooseImage_Click"
+        <Button x:Name="btnPhoto"
+                Grid.Row="10"
+                
+                Grid.Column="1"
+                Height="75"
+                Width="250"
+                Margin="5"
+                Click="btnPhoto_Click"
+                Content=""
+                Background="{x:Null}"
             ></Button>
-        <Button 
-            Style="{DynamicResource ButtonStyle1}"
-            x:Name="btnAdd"
-                Grid.Row="14"
+        <Button x:Name="btnAdd"
+                Style="{DynamicResource ButtonStyle1}"
+                Grid.Row="11"
                 Grid.ColumnSpan="2"
                 Width="150"
                 Height="30"

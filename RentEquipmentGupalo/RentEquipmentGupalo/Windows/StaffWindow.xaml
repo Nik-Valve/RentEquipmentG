@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
         mc:Ignorable="d"
-         Title="StaffWindow" Height="600" Width="1000">
+        Title="StaffWindow" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen" Background="#FF7C7C7C">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -29,7 +30,7 @@
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Foreground" Value="Yellow"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -37,7 +38,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5"  Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <Border x:Name="border" Background="#161a1e" CornerRadius="10" BorderBrush="#1e1112" BorderThickness="5" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -74,15 +75,14 @@
         <TextBlock Text="Список сотрудников"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            Foreground="Yellow"
                    FontSize="24"
-                   Foreground="Yellow"
             ></TextBlock>
         <ListView x:Name="lvStaff"
                   Grid.Row="2"
                   KeyDown="lvStaff_KeyDown"
                   MouseDoubleClick="lvStaff_MouseDoubleClick"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  Background="#264653"
                   >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -91,66 +91,78 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="Aqua"
-                Width="400"
-                Height="100"
-                BorderThickness="2"
-                BorderBrush="#FFB0A6DC"
-                CornerRadius="4">
-
-
+                    <Border
+            Background="Black"
+            Width="900"
+            Height="100"
+            BorderThickness="2"
+            CornerRadius="5"
+            BorderBrush="Wheat"
+            >
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-
-
-                            <Image x:Name="PhotoEmployee"
-                       Grid.RowSpan="3"  
-                       Margin="10">
-                                <Image.Source>
-                                    <Binding Path="Photo">
-                                    </Binding>
-                                </Image.Source>
-                            </Image>
                             <Image 
                                 Grid.RowSpan="3"
                                 Source="/Windows/idiot.jpeg"></Image>
+                            <Image x:Name="PhotoStaff"
+                       Grid.RowSpan="3"  
+                       Margin="10">
+                                <Image.Source>
+                                    <Binding Path="Image">
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
 
 
+                            <TextBlock
+                    Text="{Binding LastName}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding FirstName}"
+                    FontSize="18"
+                                Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding MiddleName}"
+                    FontSize="18"
+                                Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    ></TextBlock>
+                            <TextBlock
+                    Text=""
+                    FontSize="18"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    ></TextBlock>
 
-
-
-
-
-                            <TextBlock Text="{Binding LastName}"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="0"/>
-                            <TextBlock Text="{Binding FirstName}"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="1"/>
-                            <TextBlock Text="{Binding MiddleName}"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
-                       Margin=" 5"
-                       Grid.Column="1"
-                       Grid.Row="2"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
@@ -164,31 +176,25 @@
                     <GridViewColumn Header="Телефон" Width="150" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
                     <GridViewColumn Header="Почта" Width="150" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
                     <GridViewColumn Header="Должность" Width="150" DisplayMemberBinding="{Binding Role.NameRole}"></GridViewColumn>
-                </GridView>-->
-            <!--</ListView.View>-->
+                </GridView>
+            </ListView.View>-->
         </ListView>
-        <Button
-            x:Name="btnStaffAdd"
+        <Button x:Name="btnStaffAdd"
+                Style="{DynamicResource ButtonStyle1}"
                 Grid.Row="1"
-                Height="35"
+                Height="50"
                 Width="150"
                 Content="Добавить сотрудника"
                 Click="btnStaffAdd_Click"
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0"
                 FontSize="14"
-           Background="#161a1e" 
-            Style="{DynamicResource ButtonStyle1}"
-            BorderBrush="#1e1112" 
-            BorderThickness="2"
-            Foreground="Yellow"
             ></Button>
-        <WrapPanel 
-            Grid.Row="1" VerticalAlignment="Center">
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center">
             <TextBlock
                 Text="Поиск"
                 FontSize="24"
-                Margin="10 0"  
+                Margin="10 0"
                 Foreground="Yellow"
                 ></TextBlock>
             <TextBox x:Name="txtSearch"

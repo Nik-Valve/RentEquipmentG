@@ -48,11 +48,11 @@ namespace RentEquipmentGupalo.Windows
             ListStaff = ClassHelper.AppData.Context.Staff.Where(i => i.IsDeleted == false).ToList();
             //Фильтрация
             ListStaff = ListStaff.Where(i =>
-            i.LastName.ToLower().Contains(txtSearch.Text.ToLower())     ||
-            i.FirstName.ToLower().Contains(txtSearch.Text.ToLower())    ||
-            i.MiddleName.ToLower().Contains(txtSearch.Text.ToLower())   ||
-            i.FIO.ToLower().Contains(txtSearch.Text.ToLower())          ||
-            i.Phone.ToLower().Contains(txtSearch.Text.ToLower())        ||
+            i.LastName.ToLower().Contains(txtSearch.Text.ToLower()) ||
+            i.FirstName.ToLower().Contains(txtSearch.Text.ToLower()) ||
+            i.MiddleName.ToLower().Contains(txtSearch.Text.ToLower()) ||
+            i.FIO.ToLower().Contains(txtSearch.Text.ToLower()) ||
+            i.Phone.ToLower().Contains(txtSearch.Text.ToLower()) ||
             i.Email.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
 
             switch (cmbSort.SelectedIndex)
