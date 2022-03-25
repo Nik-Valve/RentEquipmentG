@@ -17,6 +17,7 @@
     <NavigationProperty Name="Gender" Relationship="Self.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
     <NavigationProperty Name="Passport" Relationship="Self.FK_Client_Passport" FromRole="Client" ToRole="Passport" />
     <NavigationProperty Name="ClientProduct" Relationship="Self.FK_ClientProduct_Client" FromRole="Client" ToRole="ClientProduct" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="ClientProduct">
     <Key>
@@ -31,6 +32,8 @@
     <NavigationProperty Name="Client" Relationship="Self.FK_ClientProduct_Client" FromRole="ClientProduct" ToRole="Client" />
     <NavigationProperty Name="Product" Relationship="Self.FK_ClientProduct_Product" FromRole="ClientProduct" ToRole="Product" />
     <NavigationProperty Name="Staff" Relationship="Self.FK_ClientProduct_Staff" FromRole="ClientProduct" ToRole="Staff" />
+    <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>

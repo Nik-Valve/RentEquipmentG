@@ -186,7 +186,7 @@
                 Grid.Row="1"
                 Height="50"
                 Width="150"
-                Content="Добавить сотрудника"
+                Content="Добавить продукт"
                 Click="btnStaffAdd_Click"
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0"

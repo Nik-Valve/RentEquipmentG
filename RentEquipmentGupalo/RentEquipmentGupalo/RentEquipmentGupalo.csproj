@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\AppData.cs" />
+    <Compile Include="ClassHelper\Client.cs" />
     <Compile Include="ClassHelper\Staff.cs" />
     <Compile Include="EF\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -120,6 +121,9 @@
     <Compile Include="EF\Type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddClientListWindow.xaml.cs">
+      <DependentUpon>AddClientListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddEquipListWindow.xaml.cs">
       <DependentUpon>AddEquipListWindow.xaml</DependentUpon>
     </Compile>
@@ -157,6 +161,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\AddClientListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddEquipListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

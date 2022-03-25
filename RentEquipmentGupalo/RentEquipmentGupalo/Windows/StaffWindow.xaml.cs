@@ -30,6 +30,7 @@ namespace RentEquipmentGupalo.Windows
             lvStaff.ItemsSource = ClassHelper.AppData.Context.Staff.ToList();
             cmbSort.ItemsSource = ListSort;
             cmbSort.SelectedIndex = 0;
+
         }
 
         //добавление

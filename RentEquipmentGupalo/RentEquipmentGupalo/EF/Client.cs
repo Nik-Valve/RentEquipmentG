@@ -30,6 +30,7 @@ namespace RentEquipmentGupalo.EF
         public System.DateTime DateOfBirth { get; set; }
         public int IDGender { get; set; }
         public bool IsDeleted { get; set; }
+        public byte[] Photo { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Passport Passport { get; set; }

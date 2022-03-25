@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="RentEquipmentModel.Client">
         <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -20,6 +21,8 @@
     <EntitySetMapping Name="ClientProduct">
       <EntityTypeMapping TypeName="RentEquipmentModel.ClientProduct">
         <MappingFragment StoreEntitySet="ClientProduct">
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDClient" ColumnName="IDClient" />
           <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />

@@ -14,6 +14,7 @@
     <Property Name="DateOfBirth" Type="date" Nullable="false" />
     <Property Name="IDGender" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="ClientProduct">
     <Key>
@@ -25,6 +26,8 @@
     <Property Name="DateOfIssue" Type="datetime" Nullable="false" />
     <Property Name="IDProduct" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+    <Property Name="DateEnd" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>

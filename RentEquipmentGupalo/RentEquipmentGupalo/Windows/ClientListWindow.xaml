@@ -5,7 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
         mc:Ignorable="d"
-        Title="Список клиентов" Height="600" Width="1000">
+        Title="StaffWindow" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen" Background="#FF7C7C7C">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="#161a1e" CornerRadius="10" BorderBrush="#1e1112" BorderThickness="5" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid
         Background="#264653">
         <Grid.RowDefinitions>
@@ -17,28 +75,142 @@
         <TextBlock Text="Список клиентов"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            Foreground="Yellow"
                    FontSize="24"
-                   Foreground="Yellow"
             ></TextBlock>
-        <ListView x:Name="lvClientList"
+        <ListView x:Name="lvStaff"
                   Grid.Row="2"
-                  KeyDown="lvClientList_KeyDown"
-                  Background="#264653"
+                  KeyDown="lvStaff_KeyDown_1"
+                  MouseDoubleClick="lvStaff_MouseDoubleClick"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   >
-            <ListView.View>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+            Background="#4E5754"
+            Width="900"
+            Height="100"
+            BorderThickness="2"
+            CornerRadius="5"
+            BorderBrush="Wheat"
+            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="/RES/idiot.jpeg"
+                                       Grid.RowSpan="3">
+
+                            </Image>
+                            <Image x:Name="PhotoStaff"
+                       Grid.RowSpan="3"  
+                       Margin="10">
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+
+                            <TextBlock
+                    Text="{Binding LastName}"
+                    FontSize="18"
+                    Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding FirstName}"
+                    FontSize="18"
+                                Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    ></TextBlock>
+                            <TextBlock
+                    Text="{Binding MiddleName}"
+                    FontSize="18"
+                                Foreground="AntiqueWhite"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    ></TextBlock>
+                            <TextBlock
+                    Text=""
+                    FontSize="18"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    ></TextBlock>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <!--<ListView.View>
                 <GridView>
                     <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
-                    <GridViewColumn Header="Фамилия" Width="125" DisplayMemberBinding="{Binding LastName}"></GridViewColumn>
-                    <GridViewColumn Header="Имя" Width="125" DisplayMemberBinding="{Binding FirstName}"></GridViewColumn>
-                    <GridViewColumn Header="Отчество" Width="125" DisplayMemberBinding="{Binding MiddleName}"></GridViewColumn>
-                    <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
-                    <GridViewColumn Header="Почта" Width="100" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
-                    <GridViewColumn Header="Дата рождения" Width="150" DisplayMemberBinding="{Binding DateOfBirth}"></GridViewColumn>
-                    <GridViewColumn Header="Пол" Width="50" DisplayMemberBinding="{Binding Gender.NameGender}"></GridViewColumn>
-                    <GridViewColumn Header="Серия" Width="50" DisplayMemberBinding="{Binding Passport.PassportSeries}"></GridViewColumn>
-                    <GridViewColumn Header="Номер" Width="75" DisplayMemberBinding="{Binding Passport.PassportNumber}"></GridViewColumn>
+                    <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding LastName}"></GridViewColumn>
+                    <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding FirstName}"></GridViewColumn>
+                    <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding MiddleName}"></GridViewColumn>
+                    <GridViewColumn Header="Телефон" Width="150" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
+                    <GridViewColumn Header="Почта" Width="150" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
+                    <GridViewColumn Header="Должность" Width="150" DisplayMemberBinding="{Binding Role.NameRole}"></GridViewColumn>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
         </ListView>
+        <Button x:Name="btnStaffAdd"
+                Style="{DynamicResource ButtonStyle1}"
+                Grid.Row="1"
+                Height="50"
+                Width="150"
+                Content="Добавить продукт"
+                Click="btnStaffAdd_Click"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"
+                FontSize="14"
+            ></Button>
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock
+                Text="Поиск"
+                FontSize="24"
+                Margin="10 0"
+                Foreground="Yellow"
+                ></TextBlock>
+            <TextBox x:Name="txtSearch"
+                Width="300"
+                     FontSize="16"
+                     Margin="10"
+                     TextChanged="txtSearch_TextChanged"
+                ></TextBox>
+            <ComboBox x:Name="cmbSort"
+                      Width="300"
+                      FontSize="16"
+                      Margin="10"
+                      SelectionChanged="cmbSort_SelectionChanged"  
+                ></ComboBox>
+        </WrapPanel>
     </Grid>
 </Window>

@@ -21,11 +21,12 @@ namespace RentEquipmentGupalo.Windows
     {
             List<string> ListSort = new List<string>()
     {
-        "По умолчанию","По фамилии","По имени","По телефону","По почте","По должности"
+        "По умолчанию","По имени","По ID"
     };
             public EquipListWindow()
         {
             InitializeComponent();
+            Filter();
             lvEquipList.ItemsSource = ClassHelper.AppData.Context.Product.ToList();
             cmbSort.ItemsSource = ListSort;
             cmbSort.SelectedIndex = 0;
@@ -81,13 +82,12 @@ namespace RentEquipmentGupalo.Windows
 
         private void lvEquipList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (lvEquipList.SelectedItem is EF.Staff)
+            if (lvEquipList.SelectedItem is EF.Product)
             {
-                //Закрыто до создания AddEquipListWindow
-                //var stf = lvEquipList.SelectedItem as EF.Product;
-                //AddEquipListWindow addEquipListWindow= new AddEquipListWindow(stf);
-                //addEquipListWindow.ShowDialog();
-                //Filter();
+                var stf = lvEquipList.SelectedItem as EF.Product;
+                AddEquipListWindow addEquipListWindow = new AddEquipListWindow(stf);
+                addEquipListWindow.ShowDialog();
+                Filter();
 
             }
         }
@@ -98,16 +98,19 @@ namespace RentEquipmentGupalo.Windows
             {
                 try
                 {
-                    var resmsg = MessageBox.Show("Удалить продукт?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                    if (resmsg == MessageBoxResult.No)
+                    if (lvEquipList.SelectedItem is EF.Product)
                     {
-                        return;
+                        var resmsg = MessageBox.Show("Удалить продукт?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        if (resmsg == MessageBoxResult.No)
+                        {
+                            return;
+                        }
+                        var stf = lvEquipList.SelectedItem as EF.Product;
+                        stf.IsDeleted = true;
+                        ClassHelper.AppData.Context.SaveChanges();
+                        MessageBox.Show("Продукт успешно удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Filter();
                     }
-                    var stf = lvEquipList.SelectedItem as EF.Staff;
-                    stf.IsDeleted = true;
-                    ClassHelper.AppData.Context.SaveChanges();
-                    MessageBox.Show("Продукт успешно удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Filter();
                 }
                 catch (Exception ex)
                 {
@@ -123,6 +126,15 @@ namespace RentEquipmentGupalo.Windows
 
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Filter();
+        }
+
+        private void btnStaffAdd_Click(object sender, RoutedEventArgs e)
+        {
+            
+            AddEquipListWindow staffAddWindow = new AddEquipListWindow();
+            staffAddWindow.ShowDialog();
+            lvEquipList.ItemsSource = ClassHelper.AppData.Context.Product.ToList();
             Filter();
         }
     }

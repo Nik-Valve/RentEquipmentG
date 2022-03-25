@@ -34,9 +34,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border
-            Background="Black"
+            Background="#4E5754"
             Width="400"
-            Height="200"
+            Height="500"
             BorderThickness="2"
             CornerRadius="5"
             BorderBrush="Wheat"
@@ -57,8 +57,15 @@
                             </Grid.RowDefinitions>
 
                             <Image Source="/RES/equipment.jpg"
-                       Grid.ColumnSpan="3"
-                    Grid.RowSpan="2"/>
+                                            Grid.RowSpan="3"/>
+                            <Image x:Name="PhotoStaff"
+                       Grid.RowSpan="3"  
+                       Margin="10">
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
 
                             <TextBlock
                     Grid.Row="2"
@@ -71,10 +78,11 @@
                     Padding="10 5 0 0"/>
                             <TextBlock
                     Grid.Row="3"
-                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
                     Width="130"
                     Height="30"
                     HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
                     Text="Type: "
                     FontSize="15"
                     Padding="10 5 0 0"/>
@@ -84,7 +92,7 @@
                     Width="130"
                     Height="30"
                     HorizontalAlignment="Left"
-                    Text="Prce: "
+                    Text="Price: "
                     FontSize="15"
                     Padding="10 5 0 0"/>
 
@@ -102,17 +110,17 @@
                     Grid.Row="2"
                     ></TextBlock>
                             <TextBlock
-                    Text="{Binding Type}"
+                    Text="{Binding Type.NameType}"
                     FontSize="18"
                     Foreground="AntiqueWhite"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Center"
                     Margin="5"
-                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
                     Grid.Row="3"
                     ></TextBlock>
                             <TextBlock
-                    Text="{Binding LastName}"
+                    Text="{Binding Price}"
                     FontSize="18"
                     Foreground="AntiqueWhite"
                     VerticalAlignment="Center"
@@ -120,12 +128,24 @@
                     Margin="5"
                     Grid.Column="1"
                     Grid.Row="4"
+                    TextWrapping="Wrap"
                     ></TextBlock>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="btnStaffAdd"
+                Style="{DynamicResource ButtonStyle1}"
+                Grid.Row="1"
+                Height="50"
+                Width="150"
+                Content="Добавить продукт"
+                Click="btnStaffAdd_Click"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"
+                FontSize="14"
+            ></Button>
         <WrapPanel Grid.Row="1" VerticalAlignment="Center">
             <TextBlock
                 Text="Поиск"

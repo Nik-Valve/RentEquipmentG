@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kolya\Source\Repos\NewRepo2\RentEquipmentGupalo\RentEquipmentGupalo\App.xaml
-11-968882468
+12148108051
 2-1080765
-34-1618576553
+351169879441
 18-110345483
-Windows\AddEquipListWindow.xaml;Windows\AuthWindow.xaml;Windows\ClientListWindow.xaml;Windows\EquipAcceptWindow.xaml;Windows\EquipExtAddWindow.xaml;Windows\EquipExtWindow.xaml;Windows\EquipListWindow.xaml;Windows\MainWindow.xaml;Windows\StaffAddWindow.xaml;Windows\StaffWindow.xaml;Windows\Verst.xaml;
+Windows\AddClientListWindow.xaml;Windows\AddEquipListWindow.xaml;Windows\AuthWindow.xaml;Windows\ClientListWindow.xaml;Windows\EquipAcceptWindow.xaml;Windows\EquipExtAddWindow.xaml;Windows\EquipExtWindow.xaml;Windows\EquipListWindow.xaml;Windows\MainWindow.xaml;Windows\StaffAddWindow.xaml;Windows\StaffWindow.xaml;Windows\Verst.xaml;
 
-True
+False
 
