@@ -1,5 +1,5 @@
 # RentEquipmentG
-1.AuthWindow(Error) <br>
+1.AuthWindow <br>
 ![bandicam-2022-03-25-20-52-16-274](https://user-images.githubusercontent.com/98512811/160175789-5c3f3e1f-beef-4e08-ac2d-b928d88f2ad4.gif)<br>
 2.MainWindow<br>
 ![image](https://user-images.githubusercontent.com/98512811/158655298-d0749f96-89dd-4192-9e6a-6e5879f00f5e.png)<br>
