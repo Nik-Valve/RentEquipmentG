@@ -28,6 +28,7 @@
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="DateStart" Type="datetime" Nullable="false" />
     <Property Name="DateEnd" Type="datetime" Nullable="false" />
+    <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>

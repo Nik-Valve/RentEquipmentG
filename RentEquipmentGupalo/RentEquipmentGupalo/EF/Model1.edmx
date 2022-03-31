@@ -33,6 +33,7 @@
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="DateStart" Type="datetime" Nullable="false" />
           <Property Name="DateEnd" Type="datetime" Nullable="false" />
+          <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -343,6 +344,7 @@
           <NavigationProperty Name="Staff" Relationship="Self.FK_ClientProduct_Staff" FromRole="ClientProduct" ToRole="Staff" />
           <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -651,6 +653,7 @@
           <EntitySetMapping Name="ClientProduct">
             <EntityTypeMapping TypeName="RentEquipmentModel.ClientProduct">
               <MappingFragment StoreEntitySet="ClientProduct">
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
                 <ScalarProperty Name="DateStart" ColumnName="DateStart" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

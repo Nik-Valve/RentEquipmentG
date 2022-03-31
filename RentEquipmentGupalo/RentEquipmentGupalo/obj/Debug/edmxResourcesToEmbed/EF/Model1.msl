@@ -21,6 +21,7 @@
     <EntitySetMapping Name="ClientProduct">
       <EntityTypeMapping TypeName="RentEquipmentModel.ClientProduct">
         <MappingFragment StoreEntitySet="ClientProduct">
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
           <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
           <ScalarProperty Name="DateStart" ColumnName="DateStart" />
           <ScalarProperty Name="ID" ColumnName="ID" />

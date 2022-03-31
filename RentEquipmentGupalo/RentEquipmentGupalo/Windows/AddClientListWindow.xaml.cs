@@ -182,11 +182,11 @@ namespace RentEquipmentGupalo.Windows
                         MessageBox.Show("Поле Паспорт содержит больше 10 символов", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
-                if (!Int32.TryParse(txtPasport.Text,out var a))
-                {
-                    MessageBox.Show("Поле Паспорт не содержит цифры", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
+                //if (!Int32.TryParse(txtPasport.Text,out var a))
+                //{
+                //    MessageBox.Show("Поле Паспорт не содержит цифры", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                //    return;
+                //}
                     EF.Client newstaff = new EF.Client();
                     EF.Passport newPasport = new EF.Passport();
                     newstaff.LastName = txtLastName.Text;

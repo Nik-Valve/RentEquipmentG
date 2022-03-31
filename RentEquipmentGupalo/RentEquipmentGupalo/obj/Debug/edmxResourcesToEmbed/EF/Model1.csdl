@@ -34,6 +34,7 @@
     <NavigationProperty Name="Staff" Relationship="Self.FK_ClientProduct_Staff" FromRole="ClientProduct" ToRole="Staff" />
     <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>

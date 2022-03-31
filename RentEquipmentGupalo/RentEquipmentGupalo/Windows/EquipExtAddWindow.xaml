@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentEquipmentGupalo.Windows"
         mc:Ignorable="d"
-       Title="Выдача оборудования" Height="600" Width="1000" Background="#FF7C7C7C">
-    <Grid>
+       Title="Выдача оборудования" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid
+        Background="#264653">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -72,6 +73,7 @@
         <TextBlock
             Grid.Row="5"
             Text="Выбрано:"
+            Foreground="Yellow"
             FontSize="24"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -88,6 +90,7 @@
             Grid.Row="5"
             Text="Выбрано:"
             Grid.Column="2"
+            Foreground="Yellow"
             FontSize="24"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -104,6 +107,7 @@
             Grid.Row="5"
             Text="Выбрано:"
             Grid.Column="4"
+            Foreground="Yellow"
             FontSize="24"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -178,60 +182,90 @@
             VerticalAlignment="Center" TextChanged="txtEquipSearch_TextChanged"
             ></TextBox>
         <Button
+            Style="{DynamicResource ButtonStyle1}"
             x:Name="btnCancel"
             Grid.ColumnSpan="2"
             Grid.Row="7"
             Grid.Column="0"
             Width="250"
             Height="50"
-            Background="DarkRed"
             FontSize="36"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Foreground="White"
             Content="Отмена" Click="btnCancel_Click"
             ></Button>
         <Button
+            Style="{DynamicResource ButtonStyle1}"
             x:Name="btnAddExt"
             Grid.ColumnSpan="2"
             Grid.Row="7"
             Grid.Column="5"
             Width="250"
             Height="50"
-            Background="DarkGreen"
             FontSize="36"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Foreground="White"
             Content="Выдать" Click="btnAddExt_Click"
             ></Button>
         <DatePicker x:Name="dpStartUse"
                     Grid.Row="6"
+                    Width="150"
                     Grid.ColumnSpan="3"
-                    VerticalAlignment="Bottom"
-                    Margin="0 0 0 50">
-        </DatePicker>
-        <DatePicker x:Name="dpEndUse"
-                    Grid.Row="6"
-                    Grid.Column="4"
-                    Grid.ColumnSpan="3"
-                    VerticalAlignment="Bottom"
-                    Margin="0 0 0 50">
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0 10 0 0"
+                    DatePicker.SelectedDateChanged="dpStartUse_SelectedDateChanged">
         </DatePicker>
         <TextBlock
+            Text ="Рассчётная стоимость: "
             Grid.Row="6"
-            Grid.ColumnSpan="3"
-            VerticalAlignment="Top"
-            FontSize="32"
-            Text="Дата выдачи"
-            ></TextBlock>
-        <TextBlock
-            Grid.Row="6"
-            Grid.ColumnSpan="3"
+                    Width="210"
             Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Foreground="Yellow"
+            FontSize="20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0 10 0 0"/>
+        <TextBlock
+            x:Name="txtTotalPrice"
+            Grid.Row="6"
+             Width="210"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Foreground="Yellow"
+            FontSize="20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="0 10 0 0"/>
+        <TextBlock
+            Text="начало"
+            Grid.Column="1"
+            Grid.Row="6"
+            Foreground="Yellow"
+            FontSize="20"
+            Margin="0 10 0 0"
             VerticalAlignment="Top"
-            FontSize="32"
-            Text="Дата cдачи"
-            ></TextBlock>
+            HorizontalAlignment="Right"
+            Width="100"/>
+        <TextBlock
+            Text="конец"
+            Grid.Column="1"
+            Grid.Row="6"
+            Foreground="Yellow"
+            FontSize="20"
+            Margin="0 60 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Width="100"/>
+        <DatePicker x:Name="dpEndUse"
+                    HorizontalAlignment="Left"
+                    Width="150"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="3"
+                    VerticalAlignment="Top"
+                    Margin="0 60 0 0"
+                    DatePicker.SelectedDateChanged="dpEndUse_SelectedDateChanged">
+        </DatePicker>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -182,7 +183,8 @@ namespace RentEquipmentGupalo.Windows
                 var eqp = lvEquip.SelectedItem as EF.Product;
                 txtEquip.Text = eqp.NameProduct;
                 IDeqp = eqp.ID;
-            }
+                TotalPriceMethod();
+        }
             private void btnAddExt_Click(object sender, RoutedEventArgs e)
             {
                 //Проверка - выбрана ли запись?
@@ -250,5 +252,36 @@ namespace RentEquipmentGupalo.Windows
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
+        public void TotalPriceMethod()
+        {
+                //DateTime dateStart = Convert.ToDateTime(dpStartUse.SelectedDate);
+            if (dpStartUse.SelectedDate != null && dpEndUse.SelectedDate != null && txtEquip.Text != null)
+            {
+                //DateTime dateStart = DateTime.Parse(Convert.ToString(dpStartUse.SelectedDate));
+                //DateTime dateEnd = DateTime.Parse(Convert.ToString(dpEndUse.SelectedDate));
+                var prd = lvEquip.SelectedItem as EF.Product;
+                //double a = Convert.ToDouble(dateEnd - dateStart);
+                double b = Convert.ToDouble(prd.Price);
+                //string txTotalPrice = Convert.ToString(a * b);
+                //txtTotalPrice.Text = txTotalPrice;
+                DateTime dateStart = DateTime.Parse(Convert.ToString(dpStartUse.SelectedDate));
+                DateTime dateEnd = DateTime.Parse(Convert.ToString(dpEndUse.SelectedDate));
+                string daySubtrut = Convert.ToString(dateEnd.Subtract(dateStart));
+                string[] daySplit = daySubtrut.Split(new char[] { '.' });
+                double totalPrice = Convert.ToDouble(daySplit[0]) * ((b * 5) / 100) ;
+                txtTotalPrice.Text = totalPrice.ToString();
+
+            }
         }
+
+        private void dpStartUse_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TotalPriceMethod();
+        }
+
+        private void dpEndUse_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TotalPriceMethod();
+        }
+    }
     }

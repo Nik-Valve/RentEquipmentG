@@ -22,6 +22,7 @@ namespace RentEquipmentGupalo.EF
         public bool IsDeleted { get; set; }
         public System.DateTime DateStart { get; set; }
         public System.DateTime DateEnd { get; set; }
+        public Nullable<decimal> TotalPrice { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Product Product { get; set; }
