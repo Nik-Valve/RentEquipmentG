@@ -16,5 +16,7 @@
 5.ClientList and AddClientList and Change<br>
 ![bandicam-2022-03-25-21-35-46-273](https://user-images.githubusercontent.com/98512811/160181608-8de06c2d-fe8c-4ed0-b09b-b7782a17c5fc.gif)<br>
 ![bandicam-2022-03-25-21-42-07-635](https://user-images.githubusercontent.com/98512811/160183312-5f5c3325-215d-4f97-9821-455412cc3568.gif)<br>
-![bandicam 2022-03-25 21-46-49-876](https://user-images.githubusercontent.com/98512811/160183580-b52afc55-cd25-4815-bd74-bd08862d1053.gif)
-
+![bandicam 2022-03-25 21-46-49-876](https://user-images.githubusercontent.com/98512811/160183580-b52afc55-cd25-4815-bd74-bd08862d1053.gif)<br>
+6.EquipExtAddWindow<br>
+![bandicam 2022-04-01 16-30-39-799](https://user-images.githubusercontent.com/98512811/161274771-e7a0d9fe-41f5-447d-bf31-f744372faa90.gif)<br>
+![bandicam 2022-04-01 16-39-52-328](https://user-images.githubusercontent.com/98512811/161275139-8b85f406-4d9c-45da-a79b-49533e68b4b2.gif)<br>
