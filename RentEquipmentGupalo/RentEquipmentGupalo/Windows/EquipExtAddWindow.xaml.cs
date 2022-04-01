@@ -243,6 +243,7 @@ namespace RentEquipmentGupalo.Windows
                     clientProduct.DateOfIssue = DateTime.Now; //взятие текущей системной даты
                     clientProduct.DateStart = Convert.ToDateTime(dpStartUse.SelectedDate) + DateTime.Now.TimeOfDay;
                     clientProduct.DateEnd = Convert.ToDateTime(dpEndUse.SelectedDate) + DateTime.Now.TimeOfDay;
+                    clientProduct.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
                     ClassHelper.AppData.Context.ClientProduct.Add(clientProduct);
                     ClassHelper.AppData.Context.SaveChanges();
                     MessageBox.Show("Запись добавлена");
@@ -254,22 +255,26 @@ namespace RentEquipmentGupalo.Windows
             }
         public void TotalPriceMethod()
         {
-                //DateTime dateStart = Convert.ToDateTime(dpStartUse.SelectedDate);
             if (dpStartUse.SelectedDate != null && dpEndUse.SelectedDate != null && txtEquip.Text != null)
             {
-                //DateTime dateStart = DateTime.Parse(Convert.ToString(dpStartUse.SelectedDate));
-                //DateTime dateEnd = DateTime.Parse(Convert.ToString(dpEndUse.SelectedDate));
+                
+                if (dpStartUse.SelectedDate < DateTime.Today && dpEndUse.SelectedDate < DateTime.Today)
+                {
+                    MessageBox.Show("Не правильно введена дата начала или конца", "Ошибка",
+                               MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+                else
+                {
                 var prd = lvEquip.SelectedItem as EF.Product;
-                //double a = Convert.ToDouble(dateEnd - dateStart);
                 double b = Convert.ToDouble(prd.Price);
-                //string txTotalPrice = Convert.ToString(a * b);
-                //txtTotalPrice.Text = txTotalPrice;
                 DateTime dateStart = DateTime.Parse(Convert.ToString(dpStartUse.SelectedDate));
                 DateTime dateEnd = DateTime.Parse(Convert.ToString(dpEndUse.SelectedDate));
                 string daySubtrut = Convert.ToString(dateEnd.Subtract(dateStart));
                 string[] daySplit = daySubtrut.Split(new char[] { '.' });
-                double totalPrice = Convert.ToDouble(daySplit[0]) * ((b * 5) / 100) ;
+                double totalPrice = Convert.ToDouble(daySplit[0]) * ((b * 5) / 100);
                 txtTotalPrice.Text = totalPrice.ToString();
+                }
 
             }
         }

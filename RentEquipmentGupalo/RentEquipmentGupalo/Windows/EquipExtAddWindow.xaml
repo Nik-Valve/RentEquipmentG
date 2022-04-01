@@ -81,6 +81,7 @@
         <TextBlock
             x:Name="txtStaff"
             Grid.Row="5"
+            Foreground="AliceBlue"
             Grid.Column="1"
             FontSize="24"
             HorizontalAlignment="Center"
@@ -98,6 +99,7 @@
         <TextBlock
             x:Name="txtClient"
             Grid.Row="5"
+            Foreground="AliceBlue"
             Grid.Column="3"
             FontSize="24"
             HorizontalAlignment="Center"
@@ -114,6 +116,7 @@
             ></TextBlock>
         <TextBlock
             x:Name="txtEquip"
+            Foreground="AliceBlue"
             Grid.ColumnSpan="2"
             Grid.Row="5"
             Grid.Column="5"
