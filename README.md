@@ -3,7 +3,7 @@
 ## 1.AuthWindow <br>
 ![bandicam-2022-03-25-20-52-16-274](https://user-images.githubusercontent.com/98512811/160175789-5c3f3e1f-beef-4e08-ac2d-b928d88f2ad4.gif)<br>
 ## 2.MainWindow<br>
-![image](https://user-images.githubusercontent.com/98512811/158655298-d0749f96-89dd-4192-9e6a-6e5879f00f5e.png)<br>
+![image](https://user-images.githubusercontent.com/98512811/163564620-12a43060-8a18-41ee-80cd-c3cb99a683f5.png)<br>
 ## 3.Staff and StaffAdd and Change<br>
 ![bandicam-2022-03-25-21-00-02-857](https://user-images.githubusercontent.com/98512811/160176658-dc1819b5-d48b-4d8d-9edb-885791d283f4.gif)<br>
 ![bandicam-2022-03-25-21-06-42-478](https://user-images.githubusercontent.com/98512811/160177495-13e63359-0ca1-49a4-8d91-af4171772397.gif)<br>
