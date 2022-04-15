@@ -299,7 +299,7 @@
             Background="Gray"    
             >
             <Image x:Name="PhotoUser" Source="/RES/idiot.jpeg" />
-
+            
         </Border>
         <Button x:Name="btnPhoto"
                 Grid.Row="10"

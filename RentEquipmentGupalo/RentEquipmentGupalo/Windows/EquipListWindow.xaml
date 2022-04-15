@@ -56,7 +56,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <Image Source="/RES/equipment.jpg"
+                            <!--<Image Source="/RES/equipment.jpg"
                                             Grid.RowSpan="3"/>
                             <Image x:Name="PhotoStaff"
                        Grid.RowSpan="3"  
@@ -65,7 +65,20 @@
                                     <Binding Path="Photo">
                                     </Binding>
                                 </Image.Source>
+                            </Image>-->
+
+                            <Image x:Name="PhotoStaff"
+                                   Grid.RowSpan="3"  
+                                   Margin="10">
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/RES/idiot.jpeg</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
                             </Image>
+
 
                             <TextBlock
                     Grid.Row="2"

@@ -272,7 +272,15 @@ namespace RentEquipmentGupalo.Windows
                 DateTime dateEnd = DateTime.Parse(Convert.ToString(dpEndUse.SelectedDate));
                 string daySubtrut = Convert.ToString(dateEnd.Subtract(dateStart));
                 string[] daySplit = daySubtrut.Split(new char[] { '.' });
-                double totalPrice = Convert.ToDouble(daySplit[0]) * ((b * 5) / 100);
+                double totalPrice;
+                    if (dateStart.Equals(dateEnd))
+                    {
+                        totalPrice = (b * 5) / 100;
+                    }
+                    else
+                    {
+                        totalPrice = Convert.ToDouble(daySplit[0]) * ((b * 5) / 100);
+                    }
                 txtTotalPrice.Text = totalPrice.ToString();
                 }
 

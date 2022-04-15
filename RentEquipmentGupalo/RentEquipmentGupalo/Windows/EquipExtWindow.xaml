@@ -23,7 +23,7 @@
         <ListView x:Name="lvEquipExt"
                   Grid.Row="2"
                   KeyDown="lvEquipExt_KeyDown"
-                  Background="#264653">
+                  Background="White">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Номер" Width="50" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
