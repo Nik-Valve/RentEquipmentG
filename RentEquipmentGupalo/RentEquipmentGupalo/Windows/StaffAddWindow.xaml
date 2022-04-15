@@ -321,5 +321,16 @@
                 Content="Добавить"
                 Click="btnAdd_Click"
             ></Button>
+        <Button Style="{DynamicResource ButtonStyle1}"
+                x:Name="btn_exit"
+                Grid.Row="11"
+                Grid.Column="0"
+                Width="100"
+                Content="Назад"
+                Height="30"
+                FontSize="14"
+                HorizontalAlignment="Left"
+                Margin=" 10 0 0 0"
+                Click="btn_exit_Click"/>
     </Grid>
 </Window>

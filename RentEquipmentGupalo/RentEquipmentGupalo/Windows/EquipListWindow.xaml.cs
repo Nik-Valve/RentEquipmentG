@@ -137,6 +137,11 @@ namespace RentEquipmentGupalo.Windows
             lvEquipList.ItemsSource = ClassHelper.AppData.Context.Product.ToList();
             Filter();
         }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

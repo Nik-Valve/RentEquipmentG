@@ -135,5 +135,9 @@ namespace RentEquipmentGupalo.Windows
             }
         }
 
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

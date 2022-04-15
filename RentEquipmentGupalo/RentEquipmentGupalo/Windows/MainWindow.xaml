@@ -106,5 +106,18 @@
                 Width="180"
                 Content="Список клиентов" Click="btnClientList_Click"
             ></Button>
+        <Button Style="{DynamicResource ButtonStyle1}"
+                x:Name="btn_exit"
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Width="100"
+                Content="Выход"
+                Height="40"
+                FontSize="14"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin=" 0 0 0 10"
+                Click="btn_exit_Click"/>
     </Grid>
 </Window>

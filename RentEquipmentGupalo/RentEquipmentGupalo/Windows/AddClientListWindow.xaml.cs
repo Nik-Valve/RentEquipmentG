@@ -227,5 +227,10 @@ namespace RentEquipmentGupalo.Windows
                 photostrl = openFile.FileName;
             }
         }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -92,7 +92,7 @@ namespace RentEquipmentGupalo.Windows
 
         //Удаление
 
-        private void lvStaff_KeyDown(object sender, KeyEventArgs e)
+        private void lvStaff_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Delete || e.Key == Key.Back)
             {
@@ -133,9 +133,9 @@ namespace RentEquipmentGupalo.Windows
             }
         }
 
-        private void lvStaff_KeyDown_1(object sender, KeyEventArgs e)
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

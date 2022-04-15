@@ -166,5 +166,15 @@
                       SelectionChanged="cmbSort_SelectionChanged"
                 ></ComboBox>
         </WrapPanel>
+        <Button Style="{DynamicResource ButtonStyle1}"
+                x:Name="btn_exit"
+                Grid.Row="3"
+                Width="100"
+                Content="Назад"
+                Height="30"
+                FontSize="14"
+                HorizontalAlignment="Right"
+                Margin=" 0 0 10 0"
+                Click="btn_exit_Click"/>
     </Grid>
 </Window>

@@ -55,5 +55,10 @@ namespace RentEquipmentGupalo.Windows
             clientListWindow.ShowDialog();
             this.Show();
         }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
